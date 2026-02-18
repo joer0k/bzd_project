@@ -11,7 +11,8 @@ class App(ctk.CTk):
         # Настройка окна
         self.title("Базовая программа.py")
         self.geometry("400x200")
-        self.
+        self.entry = ctk.CTkEntry(self, placeholder_text = "text")
+        self.entry.pack(pady(20)
         # Добавление виджетов
         self.label = ctk.CTkLabel(self, text="Привет, CustomTkinter!", font=("Arial", 20))
         self.label.pack(pady=20)
