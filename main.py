@@ -1,16 +1,34 @@
-# This is a sample Python script.
+import customtkinter as ctk
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Настройка внешнего вида (System, Dark, Light)
+ctk.set_appearance_mode("Light")
+ctk.set_default_color_theme("green")
+
+class App(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        little_font = ("TT Travels text",20)
+        big_fon = ("TT Travels text",25)
+        # Настройка окна
+        self.title("Калькулятор мощности.py")
+        self.geometry("400x600")
+        self.label = ctk.CTkLabel(self, text="Калькулятор установочной\nмощности двигателя", font=big_fon)
+        self.label.pack(pady=20)
+        self.entryH = ctk.CTkEntry(self, placeholder_text = "Введите H",font = little_font,width=200)
+        self.entryH.pack(pady=20)
+        self.entryVt = ctk.CTkEntry(self, placeholder_text = "Введите Vt", font= little_font,width= 200)
+        self.entryVt.pack(pady=20)
+        self.entryt = ctk.CTkEntry(self, placeholder_text = "Введите t", font = little_font,width=200)
+        self.entryt.pack(pady=20)
+        # Добавление виджетов
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+        self.button = ctk.CTkButton(self, text="Рассчитать", command=self.button_click,font =little_font)
+        self.button.pack(pady=100)
 
+    def button_click(self):
+        print("Кнопка нажата!")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    app = App()
+    app.mainloop()
