@@ -36,7 +36,7 @@ class App(ctk.CTk):
 
             messagebox.showinfo("Готово",f"~{installed_capacity(nominal_power(useful_power(Vt,temperature)))[0]} Вт")
         except Exception as exp:
-            messagebox.showerror("Ошибка", "Данные введены неверно!")
+            messagebox.showerror("Ошибка", "Данные введены неверно")
             self.entryH.delete(0,ctk.END)
             self.entryH.delete(0, ctk.END)
             self.entryH.delete(0, ctk.END)
